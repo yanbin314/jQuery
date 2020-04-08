@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery-3.4.1.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    .Nav {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      flex: 1;
+      align-items: center;
+      width: 312px;
+      background: #ddd;
+      text-align: center;
+      line-height: 50px;
+    }
+    .nav {
+      width: 100%;
+      border-right: 1px solid #000;
+    }
+    .nav > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    /* .nav > a:hover + .items {
+      display: block;
+    }
+    .items:hover {
+      display: block;
+    } */
+    .nav:last-child {
+      border-right: none;
+    }
+    .items {
+      display: none;
+      /* display: block; */
+      width: 100px;
+      position: absolute;
+    }
+    .items a {
+      display: block;
+      background: #ddd;
+    }
+    .items a:hover {
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="Nav">
+    <div class="nav">
+      <a href="#" class="item">1</a>
+      <div class="items">
+        <a href="#">asd</a>
+        <a href="#">asd</a>
+        <a href="#">asd</a>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="#" class="item">2</a>
+      <div class="items">
+        <a href="#">asd</a>
+        <a href="#">asd</a>
+        <a href="#">ads</a>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="#" class="item">3</a>
+      <div class="items">
+        <a href="#">asd</a>
+        <a href="#">asd</a>
+        <a href="#">asd</a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="u1">
+    <li>我是一个li标签</li>
+    <li class="item123">我是一个li标签</li>
+    <li>我是一个li标签</li>
+    <li>我是一个li标签</li>
+  </ul>
+  <script>
+    $('.nav').mouseover( function () {
+      $(this).children('.items').show();
+    });
+    $('.nav').mouseout( function () {
+      $(this).children('.items').hide();
+    });
+    var papa = $('.item123').parent();
+    $(papa).css('color', '#aaa')
+    var sonAll = $('.u1').find('li');
+  </script>
+</body>
+</html>
