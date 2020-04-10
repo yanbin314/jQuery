@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../jquery-3.4.1.min.js"></script>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <input class="all" type="checkbox">全选
+  <input class="item" type="checkbox">1
+  <input class="item" type="checkbox">2
+  <input class="item" type="checkbox">3
+  <input class="all" type="checkbox">全选
+  <script>
+    $('.all').change( function () {
+      $('.item, .all').prop('checked', $(this).prop('checked'));
+    });
+    $('.item').change( function () {
+      let length1 = $('.item').length;
+      let length2 = $('.item:checked').length;
+      if (length1 !== length2) {
+        $('.all').prop('checked', '');
+      } else if (length1 === length2) {
+        $('.all').prop('checked', $(this).prop('checked'));
+      }
+    });
+  </script>
+</body>
+</html>
